@@ -1,0 +1,176 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+.Menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100vh;
+
+  z-index: 25;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  background-color: $white-color;
+
+  transform: translateX(-100%);
+
+  transition: .3s;
+
+  @media screen and (min-width: $tablet + px) {
+    display: none;
+  }
+
+  @media screen and (max-width: $tablet-mini + px) {
+    width: 390px;
+  }
+
+  @media screen and (max-width: $mobile-mini + px) {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  &.Active{
+    transform: translateX(0%);
+    box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.Inner{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  padding: 70px 0px 85px 150px;
+
+  transition: .3s;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    padding: 70px 0px 70px 90px;
+  }
+
+  @media screen and (max-width: $mobile-mini + px) {
+    padding: 30px 0px 45px 60px;
+  }
+}
+
+.Title{
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+
+  margin-bottom: 55px;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+
+.Close{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: 40px;
+  right: 40px;
+
+  .Stick{
+    display: block;
+    width: 125%;
+    height: 2px;
+    background-color: $black-color;
+
+    transform-origin: left;
+
+    &:first-child{
+      transform: rotate(45deg);
+    }
+
+    &:last-child{
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.Links{
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  .Item{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+  }   
+
+  .Link{
+    &.Active{
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 10px;
+      color: $orange-color;
+      
+      &::before{
+        content: '';
+        position: absolute;
+        left: -25px;
+        width: 25px;
+        height: 1px;
+        background-color: $orange-color;
+      }
+    }
+  }
+}
+
+.Help{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: auto;
+
+  .Links{
+    display: flex;
+    flex-direction: column;
+
+    .Item{
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: $gray-text-color;
+    }
+  }
+
+  .Social{
+    display: flex;
+    gap: 25px;
+
+    .Item{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: $orange-color;
+
+      @media screen and (max-width: $mobile-mini + px) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .Link{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: $white-color;
+    }
+  }
+}

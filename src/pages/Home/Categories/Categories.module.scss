@@ -1,0 +1,153 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+$border-color: #CACACA;
+
+.Inner{
+  display: grid;
+
+  @media screen and (min-width: $tablet + px) {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    grid-template-rows: repeat(2, 400px);
+    gap: 37px;
+  }
+
+  @media screen and (max-width: $tablet + px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 200px);
+    gap: 20px;
+  }
+
+  @media screen and (max-width: $mobile + px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 100px);
+    gap: 20px;
+  }
+}
+
+.Link{
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+
+  padding: 20px;
+
+  @media screen and (any-hover: hover) {
+    &:hover{
+      .Image{
+        opacity: 1;
+      }
+      &.Full{
+        &::before{
+          transform: translateY(0);
+        }      
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile + px) {
+    grid-column: 1/3;
+  }
+
+  &.Full{
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    @media screen and (max-width: $tablet + px) {
+      display: none;
+    }
+
+    &::before{
+      content: 'Перейти в магазин';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+
+      font-family: $font-family-Montserrat;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 26px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $white-color;
+
+      transform: translateY(-101%);
+      transition: .3s transform ease;
+      background-color: rgba(0, 0, 0, 0.56);
+
+      z-index: 5;
+    }
+  }
+}
+
+.ImageWrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  background-color: #000;
+}
+
+.Image{
+  transform: scale(1.1);
+  opacity: .8;
+  transition: .3s opacity ease;
+}
+
+.Content{
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Title{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: $font-family-Montserrat;
+  font-weight: 500;
+  @include adaptiv-value('font-size', 28, 18, 1);
+  @include adaptiv-value('line-height', 36, 24, 1);
+  color: #FFFFFF;
+}
+
+.Main{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  @include adaptiv-value('font-size', 38, 20, 1);
+  @include adaptiv-value('line-height', 46, 28, 1);
+
+  border: 1px solid $border-color;
+  background-color: $white-color;
+
+  border-radius: 10px;
+
+  grid-column: 2/3;
+  grid-row: 1/2;
+
+  @media screen and (max-width: $tablet + px) {
+    grid-column: 1/3;
+  }
+
+  .Orange{
+    color: $orange-color;
+  }
+}

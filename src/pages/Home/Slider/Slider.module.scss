@@ -1,0 +1,103 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+$background-gradient: linear-gradient(78.83deg, hsla(22deg, 61%, 27%, 0.07) -2.75%, hsla(0deg, 0%, 100%, 0) 101.74%);
+
+.Section{
+  background: $background-gradient;
+}
+
+.Swiper{
+  @media screen and (min-width: $tablet + px) {
+    height: 550px;
+  }
+}
+
+.Slide{
+  cursor: grab;
+  height: 100%;
+  .Inner{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 80px 0 100px 0;
+
+    gap: 80px;
+
+    @media screen and (max-width: $tablet + px) {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      padding: 60px 0 80px 0;
+    }
+  }
+
+  .Content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 1 calc(650 / 1440 * 100%);
+
+    @media screen and (max-width: $tablet + px) {
+      width: 100%;
+      flex: 1;
+    }
+
+    .Title{
+      margin-bottom: 15px;
+    }
+  
+    .Description{
+      max-width: 100%;
+      margin-bottom: 25px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+    }
+  
+    .Button{
+      margin-top: auto;
+
+      border: 1px solid $orange-color;
+      border-radius: 7px;
+
+      color: $orange-color;
+
+      padding: 12px 32px;
+
+      text-transform: uppercase;
+
+      @include adaptiv-value('font-size', 16, 12, 1);
+      line-height: 220%;
+
+      transition: .3s background-color ease;
+
+      @media screen and (any-hover: hover) {
+        &:hover{
+          color: $white-color;
+          background-color: $orange-color;
+        }
+      }
+
+      @media screen and (max-width: $tablet + px) {
+        padding: 10px 26px;
+      }
+    }
+  }
+  
+  .ImageWrapper{
+    flex: 1;
+
+    @media screen and (max-width: $tablet + px){
+      max-height: 300px;
+    }
+  }
+
+  .Image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}

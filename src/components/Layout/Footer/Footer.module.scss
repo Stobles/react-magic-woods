@@ -1,0 +1,223 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+$form-shadow: 0px 0px 5px 1px rgba(237, 85, 59, 0.1);
+
+.Footer{
+  background-color: $footer-bg-color;
+}
+
+.Inner{
+  display: flex;
+  align-items: center;
+  padding: 75px 0;
+
+  @media screen and (max-width: $tablet + px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.Main{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px 20px 20px 0px;
+
+  @media screen and (max-width: $tablet + px) and (min-width: $mobile-mini + px) {
+    align-items: center;
+  }
+
+  .Links{
+    display: flex;
+    gap: 25px;
+  }
+}
+
+.Title{
+  font-family: $font-family-Poppins;
+  font-weight: 700;
+  @include adaptiv-value('font-size', 32, 28, 1);
+  @include adaptiv-value('line-height', 48, 40, 1);
+
+  margin-bottom: 21px;
+}
+
+.Form{
+  display: flex;
+  background-color: #fff;
+  padding: 2px;
+  border-radius: 3px;
+  box-shadow: $form-shadow;
+}
+
+.Input{
+  width: 240px;
+  padding-left: 20px;
+  padding-right: 10px;
+  color: #ed553b;
+
+  &::placeholder{
+    color: $orange-color;
+  }
+
+  @media screen and (max-width: $mobile-mini + px) {
+    max-width: 240px;
+    width: 100%;
+  }
+}
+
+.Button{
+  padding: 10px 28px;
+  font-size: 15px;
+  line-height: 19px;
+  color: #fff;
+  background-color: #ed553b;
+  border-radius: 3px;
+  border: 1px solid #ed553b;
+  transition: 0.3s;
+
+  @media screen and (max-width: $mobile-mini + px) {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+.Err{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $orange-color;
+
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+  min-height: 18px;
+}
+
+.Copyright{
+  font-family: $font-family-Montserrat;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $gray-text-color;
+
+  margin-top: 35px;
+}
+
+.Nav{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 300px));
+  justify-content: flex-end;
+  justify-items: center;
+  align-items: center;
+  row-gap: 20px;
+
+  @media screen and (max-width: $tablet + px)  {
+    justify-content: center;
+    margin-bottom: 15px;
+
+    row-gap: 35px;
+  }
+
+  @media screen and (max-width: $mobile-mini + px) {
+    justify-content: flex-start;
+
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: $tablet-mini + px) {
+    grid-template-columns: none;
+    grid-template-rows: auto;
+    justify-items: flex-start;
+  }
+
+  .Title{
+    font-family: $font-family-Montserrat;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 33px;
+    color: $black-text-color;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      font-weight: 600;
+    }
+  }
+
+  .Links{
+    max-width: 200px;
+
+    @media screen and (min-width: $tablet-mini + px) {
+      padding: 0 30px;
+    }
+  }
+
+  .List{
+    margin: 0;
+    padding: 0;
+  }
+
+  .Item{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:not(:last-child){
+      margin-bottom: 20px;
+    }
+  }
+
+  .Link{
+    font-size: 16px;
+    line-height: 20px;
+    color: $gray-text-color;
+    transition: 0.3s color ease;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.Contacts{
+  .List{
+    max-width: 180px;
+  }
+
+  .Subtitle{
+    font-family: $font-family-Montserrat;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      font-size: 18px;
+    }
+  }
+
+  .Links{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 220px;
+
+    padding: 0;
+  }
+
+  .Link{
+    color: $light-gray-text-color;
+    font-size: 15px;
+    transition: 0.3s color ease;
+
+    @media screen and (any-hover: hover) {
+      &:hover{
+        color: $gray-text-color;
+      }
+    }
+
+    @media screen and (max-width: $tablet-mini + px) {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+.Info{
+  background-color: $black-color;
+  
+  max-height: 100px;
+}
+
+.Inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $white-color;
+
+  padding: 11px 0;
+
+  @media screen and (max-width: $mobile + px) {
+    justify-content: center;
+  }
+}
+
+.Links{
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.Link{
+  color: $white-color;
+}
+
+.Telephone{
+  display: flex;
+  flex-direction: column;
+
+  text-align: end;
+
+  @media screen and (max-width: $mobile + px) {
+    display: none;
+  }
+
+  .MainText{
+    @include adaptiv-value('font-size', 24, 18, 1);
+    @include adaptiv-value('line-height', 30, 24, 1);
+    color: $white-color;
+
+    cursor: pointer;
+
+    padding: 0;
+    border: 0;
+    outline: none;
+
+    text-align: end;
+
+    &.Disabled{
+      color: $gray-text-color;
+    }
+  }
+
+  .SubText{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $gray-text-color;
+  }
+}

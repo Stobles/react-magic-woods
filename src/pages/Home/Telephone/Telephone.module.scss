@@ -1,0 +1,131 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+$background-gradient: linear-gradient(78.83deg, hsla(22deg, 61%, 27%, 0.07) 0%, hsla(0deg, 0%, 100%, 0) 80%); 
+
+.Inner{
+  position: relative;
+  display: flex;
+
+  &::before{
+    content: "";
+    position: absolute;
+    width: 100vmax;
+    height: 100%;
+    -webkit-transform: translateX(-20%);
+    transform: translateX(-20%);
+    background: $background-gradient;
+    z-index: -1;
+
+    @media screen and (max-width: $tablet + px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: $tablet + px) {
+    flex-direction: column;
+  }
+}
+
+.Content{
+  flex: 0 1 50%;
+  margin: 50px 0;
+
+  @media screen and (min-width: $tablet + px) {
+    padding: 95px 56px 95px 0;
+    margin: 0;
+  }
+}
+
+.Description{
+  margin-bottom: 50px;
+  user-select: none;
+}
+
+.Form{
+  display: flex;
+
+  max-height: 62px;
+
+  @media screen and (max-width: $tablet + px) {
+    justify-content: center;
+  }
+}
+
+.Input{
+  flex: 0 1 450px;
+  z-index: 1;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 18px;
+  padding: 20px;
+
+  outline: none;
+
+  &::placeholder{
+    font-family: $font-family-Roboto;
+    letter-spacing: 1px;
+    @include adaptiv-value('font-size', 18, 16, 1);
+    @include adaptiv-value('line-height', 20, 18, 1);
+
+    color: $orange-color;
+  }
+
+  @media screen and (max-width: $tablet-mini + px) {
+    width: 100%;
+    font-size: 13px;
+    padding: 0px 13px 0px 13px;
+  }
+}
+
+.Button{
+  display: block;
+  width: fit-content;
+  font-family: $font-family-Montserrat;
+  background-color: $orange-color;
+  color: #fff;
+  border-radius: 3px;
+  border: 2px solid $orange-color;
+  transition: 0.3s color ease, 0.3s background-color ease;
+
+  max-width: 165px;
+  width: 100%;
+
+  @include adaptiv-value('font-size', 22, 18, 1);
+  @include adaptiv-value('line-height', 36, 26, 1);
+  letter-spacing: 0.01em;
+  padding: 12px 17px;
+  border-radius: 0px 10px 10px 0px !important;
+  z-index: 1;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    padding: 10px 14px;
+
+    max-width: 145px;
+  }
+}
+
+.Err{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $orange-color;
+
+  margin-top: 5px;
+
+  min-height: 18px;
+}
+
+.Image{
+  max-width: 600px;
+  border-radius: 20px;
+  margin: 0 auto 10px auto;
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet + px) {
+    max-width: 100%;
+    flex: 0 1 50%;
+    border-radius: 20px 0px 0px 20px;
+
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,97 @@
+@import '@styles/variables.scss';
+
+.Navigation{
+  display: flex;
+  justify-content: space-between;
+
+  padding: 25px 0;
+
+  @media screen and (max-width: $tablet + px) {
+    display: none;
+  }
+}
+
+.Links{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0px, 110px));
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+  row-gap: 10px;
+
+  .Item{
+    width: 100%;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+
+    &:nth-child(even){
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color; 
+      padding: 0 10px;
+    }
+  }
+
+  .Link{
+    font-family: $font-family-Poppins;
+    font-size: 18px;
+    line-height: 27px;
+
+    text-transform: capitalize;
+
+    transition: .3s color ease;
+
+    @media screen and (any-hover: hover) {
+      &:hover{
+        color: $orange-color;
+      }
+    }
+
+    &.Active{
+      color: $orange-color;
+      font-weight: 600;
+    }
+  }
+}
+
+.Help{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0px, 110px));
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+  row-gap: 10px;
+
+  transform: rotate(180deg);
+  .Item{
+    width: 100%;
+    text-align: center;
+    transform: rotate(180deg);
+    padding: 0 10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:nth-child(even){
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+    }
+  }
+  .Link{
+    font-family: $font-family-Poppins;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: $gray-text-color;
+
+    transition: .3s color ease;
+
+    @media screen and (any-hover: hover) {
+      &:hover{
+        color: $orange-color;
+      }
+    }
+  }
+}

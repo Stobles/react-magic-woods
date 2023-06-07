@@ -1,0 +1,220 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+.Observe{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin-top: 70px;
+  
+  pointer-events: none;
+}
+
+.Header{
+  &.Observed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 20;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+    animation-name: fade;
+    animation-duration: 0.3s;
+
+    .Logo .ImageWrapper{
+      width: 60px;
+      height: 60px;
+
+      transition: .3s ease;
+    }
+
+    .Inner{
+      padding: 12px 0;
+
+      transition: .3s ease;
+    }
+  }
+}
+
+.Inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.Burger{
+  font-family: $font-family-Poppins;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @media screen and (min-width: $tablet + px) {
+    display: none;
+  }
+
+  .Button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+  
+    width: 50px;
+    height: 20px;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      width: 40px;
+      height: 20px;
+    }
+
+    @media screen and (max-width: $mobile + px) {
+      width: 35px;
+      height: 20px;
+    }
+  
+    .Stick{
+      width: 100%;
+      height: 2px;
+      background-color: $black-color;
+    }
+  }
+
+  .Text{
+    @include adaptiv-value('font-size', 24, 18, 1);
+    @include adaptiv-value('line-height', 36, 28, 1);
+
+    text-transform: uppercase;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      display: none;
+    }
+  }
+}
+
+.Logo{
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  .ImageWrapper{
+    width: 80px;
+    height: 80px;
+
+    @media screen and (max-width: $tablet + px) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .Image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .Text{
+    font-family: $font-family-Poppins;
+    @include adaptiv-value('font-size', 28, 20, 1);
+    @include adaptiv-value('line-height', 46, 38, 1);
+    text-transform: capitalize;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      display: none;
+    }
+  }
+}
+
+.Navigation{
+  display: flex;
+
+  @media screen and (max-width: $tablet + px) {
+    gap: 15px;
+  }
+}
+
+.Item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: $text-color;
+
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+
+  @media screen and (max-width: $tablet + px) {
+    position: relative;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid $orange-color;
+    background-color: transparent;
+    color: $orange-color;
+  }
+
+  @media screen and (max-width: $mobile + px){
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (min-width: $tablet + px) {
+    &:first-child{
+      border-left: 0;
+      padding: 0 25px 0 0;
+    }
+    &:not(:first-child),
+    &:not(:last-child){
+      padding: 0 25px;
+      border-left: 0;
+    }
+    &:last-child{
+      border: 0;
+      padding: 0 0 0 25px;
+    }
+  }
+
+  @media screen and (max-width: $tablet-mini + px) {
+    &:last-child{
+      display: none;
+    }
+  }
+}
+
+.Link{
+  font-family: $font-family-Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: $text-color;
+
+  text-decoration: none;
+
+  @media screen and (max-width: $tablet + px) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

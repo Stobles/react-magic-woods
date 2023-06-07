@@ -1,0 +1,137 @@
+@import '@styles/variables.scss';
+
+.Inner{
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: $tablet + px) {
+    flex-direction: column;
+  }
+}
+
+.Content{
+  width: 100%;
+  max-width: 480px;
+
+  @media screen and (max-width: $tablet + px) {
+    max-width: 100%;
+
+    margin-bottom: 50px;
+  }
+}
+
+.Title{
+  margin-bottom: 50px;
+}
+
+.PreviewWrapper{
+  position: relative;
+  width: 100%;
+  height: 480px;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  background-color: $black-color;
+
+  cursor: pointer;
+
+  @media screen and (min-width: $tablet + px) {
+    max-width: 720px;
+  }
+
+  @media screen and (max-width: $mobile + px) {
+    height: 320px;
+  }
+
+  @media screen and (max-width: $mobile-mini + px) {
+    height: 230px;
+  }
+  
+  @media screen and (any-hover: hover) {
+    &:hover{
+      .Preview{
+        transform: scale(1.1);
+      }
+
+      &::before{
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+
+      &::after{
+        transform:translate(-50%, -50%) scale(1.2);
+      }
+    }
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    background-color: $white-color;
+    transform-origin: center;
+    transition: 0.4s ease;
+    z-index: 1;
+
+    @media screen and (max-width: $mobile + px) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  &::after{
+    content: "";
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #D9D9D9;
+    clip-path: polygon(29% 0, 29% 100%, 100% 50%);
+    transform-origin: center;
+    transition: 0.4s ease;
+    z-index: 2;
+
+    @media screen and (max-width: $mobile + px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.Preview{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s transform ease;
+}
+
+.Video{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 30;
+  opacity: 0;
+  transition: 0.3s opacity ease;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  pointer-events: none;
+
+  &.Show{
+    opacity: 1;
+    pointer-events: all;
+  }
+}
