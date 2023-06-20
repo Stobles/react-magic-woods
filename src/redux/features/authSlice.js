@@ -13,10 +13,12 @@ const authSlice = createSlice({
     setUserGoogleSuccess: (state, action) => {
       state.googleToken = action.payload.token;
       state.user = action.payload.user;
+      state.basket = [];
     },
     setUserSuccess: (state, action) => {
       state.googleToken = null;
       state.user = action.payload;
+      state.basket = [];
     },
     setLogout: (state) => {
       state.googleToken = null;

@@ -1,0 +1,32 @@
+@import '@styles/variables.scss';
+
+.Pagination{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.Pages{
+  font-family: $font-family-Poppins;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.Button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: $white-color;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+  border-radius: 50%;
+
+  color: $orange-color;
+
+  font-size: 24px;
+
+  &.Disabled{
+    opacity: .7;
+  }
+}

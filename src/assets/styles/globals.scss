@@ -1,6 +1,22 @@
 @import 'variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@500&display=swap');
 
+*{
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+      
+  }
+  &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(0,0,0, 0.2); 
+      border: 3px solid #fff;
+  }
+}
+
 /* Указываем box sizing */
 *,
 *::before,

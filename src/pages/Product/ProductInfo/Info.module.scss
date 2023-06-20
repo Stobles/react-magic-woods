@@ -1,0 +1,144 @@
+@import '@styles/variables.scss';
+
+$border-description-color: #E1E1E4;
+
+.Slider{
+  width: 100%;
+  max-width: 610px;
+  cursor: grab;
+}
+
+.Content{
+  font-family: $font-family-Poppins;
+  display: flex;
+  gap: 60px;
+
+  margin-bottom: 60px;
+}
+
+.ImageWrapper{
+  width: 100%;
+  max-width: 610px;
+  height: 100%;
+  max-height: 610px;
+}
+
+.Info{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.Header{
+  margin-bottom: 45px;
+}
+
+.Title{
+  font-family: $font-family-Poppins;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+.Model{
+  font-size: 16px;
+  line-height: 24px;
+
+  color: $light-gray-text-color;
+}
+
+.Choices{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.PickerWrapper{
+  margin-bottom: 20px;
+  .Title{
+    font-family: $font-family-Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    margin-bottom: 10px;
+  }
+}
+
+.Picker{
+  display: flex;
+  gap: 15px;
+}
+
+.Prices{
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.Price{
+  font-family: $font-family-Poppins;
+  font-size: 28px;
+  line-height: 42px;
+
+  color: $orange-color;
+}
+
+.OldPrice{
+  font-family: $font-family-Poppins;
+  font-size: 24px;
+  line-height: 36px;
+
+  text-decoration-line: line-through;
+
+  color: $light-gray-text-color;
+}
+
+.Pay{
+  margin-top: auto;
+}
+
+.Button{
+  margin-bottom: 20px;
+}
+
+.Cards{
+  display: flex;
+  gap: 22px;
+}
+
+.Card{
+  width: 70px;
+  padding: 5px;
+  border: 2px solid $black-color;
+  border-radius: 5px;
+
+  .Image{
+    object-fit: contain;
+  }
+}
+
+.Description{
+  border-top: 1px solid $border-description-color;
+
+  .Header{
+    margin: 20px 0;
+    .Title{
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 42px;
+      color: #ED553B;
+    }
+  }
+
+  .Paragraph{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 18px;
+
+    &:first-child{
+      margin: 0;
+    }
+  }
+}

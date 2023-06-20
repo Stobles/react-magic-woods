@@ -1,0 +1,31 @@
+@import '@styles/variables.scss';
+
+.swiper-button-prev,
+.swiper-button-next{
+  width: 40px!important;
+  height: 40px!important;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+
+  &::after{
+    font-size: 24px!important;
+    color: $orange-color;
+    
+  }
+}
+
+.swiper-button-next{
+  right: 30px;
+
+  &::after{
+    margin-left: 3px!important;
+  }
+}
+
+.swiper-button-prev{
+  left: 30px;
+
+  &::after{
+    margin-right: 3px!important;
+  }
+}

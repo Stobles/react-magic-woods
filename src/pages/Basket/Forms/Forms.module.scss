@@ -1,0 +1,72 @@
+@import '@styles/variables.scss';
+
+.FormWrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: $milk-color;
+  border-radius: 5px;
+  padding: 35px 20px 20px 30px;
+
+  @media screen and (max-width: $tablet + px) {
+    padding: 35px 15px;
+  }
+  .Header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #E8E6F1;
+    }
+
+    .Total{
+      font-weight: 500;
+      color: $orange-color;
+    }
+  }
+}
+
+.Loader{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.Inner{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Calculate{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Result{
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: $dark-gray-text-color;
+}
+
+.Button{
+  margin-top: 20px;
+}

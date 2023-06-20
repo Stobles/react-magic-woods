@@ -8,7 +8,7 @@ const Image = ({ className, src, alt }) => {
   return (
     <>
       {imageLoaded ? (
-        <img draggable='false' className={className || styles.Image} src={src} alt={alt} />
+        <img draggable='false' className={className ? `${styles.Image} ${className}` : styles.Image} src={src} alt={alt} />
       ) : (
         <div className={styles.Loader}>
           <ClipLoader />

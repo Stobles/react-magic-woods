@@ -35,6 +35,10 @@
   &.Active{
     transform: translateX(0%);
     box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: $mobile-mini + px) {
+      box-shadow: none;
+    }
   }
 }
 
@@ -53,7 +57,7 @@
   }
 
   @media screen and (max-width: $mobile-mini + px) {
-    padding: 30px 0px 45px 60px;
+    padding: 60px 0px 45px 60px;
   }
 }
 

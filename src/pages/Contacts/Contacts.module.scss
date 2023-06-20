@@ -1,0 +1,64 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+.Title{
+  text-align: center;
+  @include adaptiv-value('margin-bottom', 25, 10, 1);
+}
+
+.Subtitle{
+  @include adaptiv-value('font-size', 24, 14, 1);
+  text-align: center;
+  @include adaptiv-value('margin-bottom', 25, 10, 1);
+}
+
+.MapWrapper{
+  margin-bottom: 50px;
+}
+
+.Contacts{
+  display: flex;
+  justify-content: space-around;
+
+  gap: 30px;
+
+  @media screen and (max-width: $mobile + px) {
+    flex-direction: column;
+
+    gap: 50px;
+  }
+}
+
+.Item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 20%;
+
+  gap: 15px;
+
+  .Title{
+    font-family: $font-family-Poppins;
+    font-weight: 600;
+    @include adaptiv-value('font-size', 20, 14, 1);
+    margin: 0;
+  }
+}
+
+.Icon{
+  color: $orange-color;
+}
+
+.Time{
+  white-space: nowrap;
+}
+
+.Address{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: $font-family-Poppins;
+  font-weight: 600;
+  color: $orange-color;
+}

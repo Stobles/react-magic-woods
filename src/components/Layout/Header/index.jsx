@@ -12,13 +12,17 @@ const Header = ({ setIsActive, wrapperRef }) => {
   const [isIntersecting, setIsIntersecting] = useState(true);
   const headerObserveRef = useRef();
   const headerRef = useRef();
-  useObserver(headerObserveRef, () => {
-    wrapperRef.current.style.marginTop = `${headerRef.current.clientHeight}px`;
-    setIsIntersecting(false);
-  }, () => {
-    wrapperRef.current.style.marginTop = 0;
-    setIsIntersecting(true);
-  });
+  useObserver(
+    headerObserveRef,
+    () => {
+      wrapperRef.current.style.marginTop = `${headerRef.current.clientHeight}px`;
+      setIsIntersecting(false);
+    },
+    () => {
+      wrapperRef.current.style.marginTop = 0;
+      setIsIntersecting(true);
+    },
+  );
 
   useEffect(() => {
     headerObserveRef.current.style.height = `${headerRef.current.clientHeight}px`;
@@ -28,7 +32,9 @@ const Header = ({ setIsActive, wrapperRef }) => {
       <div ref={headerObserveRef} className={styles.Observe} />
       <header
         ref={headerRef}
-        className={!isIntersecting ? `${styles.Header} ${styles.Observed}` : undefined}
+        className={
+          !isIntersecting ? `${styles.Header} ${styles.Observed}` : undefined
+        }
       >
         <div className='container'>
           <div className={styles.Inner}>

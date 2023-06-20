@@ -1,0 +1,90 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+.Inner{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(600px, 720px) minmax(300px, 370px);
+  grid-template-rows: 65px 180px 100px 300px 75px;
+  @include adaptiv-value('column-gap', 80, 1, 1);
+
+  @media screen and (max-width: $tablet + px) {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+  }
+}
+
+.Orders{
+  display: grid;
+  grid-template-columns: 85px 200px repeat(3, 1fr);
+  grid-template-rows: inherit;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    grid-template-rows: 65px 320px;
+    row-gap: 15px;
+  }
+
+  .Header{
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: span 5;
+    justify-items: center;
+
+    margin-right: 20px;
+
+    @media screen and (max-width: $tablet-mini + px) {
+      display: none;
+    }
+  
+    .Title{
+      &:first-child{
+        grid-column: span 2;
+        justify-self: flex-start;
+      }
+
+      &:last-child{
+        justify-self: flex-end;
+      }
+    }
+  }
+}
+
+.Content{
+  display: grid;
+  grid-template-columns: inherit;
+  grid-column: span 5;
+  grid-row: span 3;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    grid-row: 2/3;
+  }
+}
+
+.Buttons{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  grid-column: span 5;
+}
+
+.Forms{
+  display: grid;
+  grid-template-rows: inherit;
+
+  .Header{
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: $tablet + px) {
+      @include adaptiv-value('font-size', 26, 16, 1);
+      @include adaptiv-value('line-height', 32, 20, 1);
+    }
+  }
+}
+
+.Contact{
+  grid-row: span 3;
+  margin-top: 25px;
+  margin-bottom: 0;
+}

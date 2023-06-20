@@ -7,7 +7,8 @@ import Categories from './Categories';
 import Store from './Store';
 import Product from './Product';
 import FAQ from './FAQ';
+import Delivery from './Delivery';
 import User from './User';
 import Basket from './Basket';
 
-export { Login, Home, About, Blog, Contacts, Categories, Store, Product, FAQ, User, Basket };
+export { Login, Home, About, Blog, Contacts, Categories, Store, Product, FAQ, Delivery, User, Basket };

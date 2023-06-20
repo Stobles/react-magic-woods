@@ -1,0 +1,41 @@
+@import '@styles/variables.scss';
+
+$header-border-color: #C8C8C8;
+
+.Filter{
+  height: 100%;
+}
+
+.Inner{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 100%;
+}
+
+.Header{
+  margin-bottom: 12px;
+  .Title{
+    display: inline;
+    position: relative;
+    padding-bottom: 5px;
+    font-family: $font-family-Poppins;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: $header-border-color;
+    }
+  }
+}
+
+.Button{
+  margin-top: auto;
+}

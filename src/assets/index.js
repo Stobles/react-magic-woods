@@ -14,4 +14,16 @@ import store from './images/Home/categories/store.webp';
 
 import russia from './images/About/russia.png';
 
-export { Logo, slide, personal, search, home, quality, telephoneBg, singleLayer, multiLayer, extra, store, russia };
+// Login
+
+import loginBg from './images/Login/bg.png';
+
+// Product
+
+import mastercard from './images/Product/mastercard.png';
+import visa from './images/Product/visa.png';
+import googlePay from './images/Product/g_pay.png';
+import applePay from './images/Product/a_pay.png';
+
+
+export { Logo, slide, personal, search, home, quality, telephoneBg, singleLayer, multiLayer, extra, store, russia, loginBg, mastercard, visa, googlePay, applePay };

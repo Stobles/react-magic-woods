@@ -22,22 +22,21 @@ const About = () => {
             <SubHeading title='о нас' />
             <Heading style={styles.Title} title='Magic Wood Maps' />
             <Description
-              text={`Головним прагненням нашої команди є задоволеність клієнта від співпраці із нашою командою 
-                Головним прагненням нашої команди є задоволеність клієнта від співпраці із нашою командою`}
+              text={`Главным стремлением нашей команды есть удовлетворенность 
+              клиента от сотрудничества с нашей командой`}
             />
           </div>
           <div ref={previewRef} className={styles.PreviewWrapper}>
             <Image
               className={styles.Preview}
-              src='https://i.ytimg.com/vi/rg6fQMLB8Tk/maxresdefault.jpg'
+              src='https://i.ytimg.com/vi/BkU8T49BCSQ/maxresdefault.jpg'
               alt='preview'
             />
           </div>
-          <div ref={videoRef} className={isVideoActive ? `${styles.Video} ${styles.Show}` : styles.Video}>
+          <div ref={videoRef} className={isVideoActive ? `${styles.VideoWrapper} ${styles.Show}` : styles.VideoWrapper}>
             <iframe
-              width='1086'
-              height='611'
-              src='https://www.youtube.com/embed/rg6fQMLB8Tk'
+              className={styles.Video}
+              src='https://www.youtube.com/embed/BkU8T49BCSQ'
               title='Genshin Impact - Full OST (Updated - Part 1) w/ Timestamps'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

@@ -15,10 +15,17 @@ $description-xs-line-height: 32;
 
 .PageTitle{
   display: flex;
+  align-items: center;
   font-family: $font-family-Poppins;
+  font-weight: 300;
   @include adaptiv-value('font-size', $page-title-font-size, 24, 1);
   @include adaptiv-value('line-height', $page-title-line-height, 35, 1);
-  margin: 0 100px;
+
+  gap: 70px;
+
+  margin-bottom: 70px;
+
+  white-space: nowrap;
 
   &::after,
   &::before{

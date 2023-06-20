@@ -113,7 +113,7 @@
   transition: .5s transform ease;
 }
 
-.Video{
+.VideoWrapper{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,5 +133,19 @@
   &.Show{
     opacity: 1;
     pointer-events: all;
+  }
+}
+
+.Video{
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+
+  @media screen and (max-width: $tablet + px) {
+    height: 400px;
+  }
+
+  @media screen and (max-width: $mobile + px) {
+    height: 200px;
   }
 }

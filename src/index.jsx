@@ -10,11 +10,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import '@styles/globals.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistStore(store)}>
-        <App />
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistStore(store)}>
+      <App />
+    </PersistGate>
+  </Provider>,
 );

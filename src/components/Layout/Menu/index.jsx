@@ -25,6 +25,7 @@ const Menu = ({ title, isMenuActive, setIsActive }) => (
         {navLinksMain.map(({ name, to }) => (
           <li key={name} className={styles.Item}>
             <NavLink
+              onClick={() => setIsActive(false)}
               to={to}
               className={({ isActive }) => (isActive ? `${styles.Link} ${styles.Active}` : styles.Link)}
             >
@@ -37,7 +38,11 @@ const Menu = ({ title, isMenuActive, setIsActive }) => (
         <ul className={styles.Links}>
           {navLinksSecondary.map(({ name, to }) => (
             <li key={name} className={styles.Item}>
-              <NavLink to={to} className={styles.Link}>
+              <NavLink
+                onClick={() => setIsActive(false)}
+                to={to}
+                className={styles.Link}
+              >
                 {name}
               </NavLink>
             </li>

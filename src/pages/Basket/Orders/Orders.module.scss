@@ -1,0 +1,135 @@
+@import '@styles/mixin.scss';
+@import '@styles/variables.scss';
+
+.Orders{
+  display: grid;
+  grid-column: span 5;
+  grid-template-columns: inherit;
+  grid-auto-rows: calc(505 / 5) + px;
+  row-gap: 15px;
+
+  overflow-y: auto;
+
+  @media screen and (max-width: $mobile + px) {
+    grid-template-columns: 65px 1fr 50px;
+    grid-auto-rows: calc(400 / 5) + px;
+    row-gap: 8px;
+  }
+}
+
+.Empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 5;
+  grid-row: span 5;
+
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.Card{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: inherit;
+  grid-column: span 5;
+  padding-bottom: 12px;
+
+  @media screen and (min-width: $tablet + px) {
+    margin-right: 25px;
+  }
+}
+
+.Image{
+  border-radius: 5px;
+}
+
+.Header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: flex-start;
+
+  padding-left: 15px;
+
+  .Price{
+    margin-top: 5px;
+    @media screen and (min-width: $mobile + px) {
+      display: none;
+    }
+  }
+}
+
+.Title{
+  font-family: $font-family-Poppins;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  margin: 0 0 10px 0;
+}
+
+.Info{
+  font-family: $font-family-Poppins;
+  font-weight: 600;
+  @include adaptiv-value('font-size', 14, 8, 1);
+  @include adaptiv-value('line-height', 21, 10, 1);
+
+  color: $sub-text-color;
+}
+
+.Price{
+  font-family: $font-family-Poppins;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $orange-color;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    grid-column: 3/5;
+  }
+
+  @media screen and (max-width: $mobile + px) {
+    display: none;
+  }
+}
+
+.QuantityWrapper{
+  display: flex;
+  align-items: center;
+
+  height: 15px;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    grid-column: 5;
+  }
+}
+
+.Char{
+  width: 15px;
+  height: 100%; 
+  text-align: center;
+  background-color: #E7E7EF;
+}
+
+.Quantity{
+  width: 20px;
+  height: 100%;
+  text-align: center;
+  background-color: #F0EFF2; 
+}
+
+.Total{
+  justify-self: flex-end;
+
+  font-family: $font-family-Poppins;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $orange-color;
+
+  @media screen and (max-width: $tablet-mini + px) {
+    display: none;
+  }
+}

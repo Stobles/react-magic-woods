@@ -1,16 +1,14 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaVk } from 'react-icons/fa';
-import { extra, multiLayer, singleLayer } from '.';
+import { applePay, extra, googlePay, mastercard, multiLayer, singleLayer, visa } from '.';
 
 export const navLinksMain = [
   { name: 'Главная', to: '/' },
   { name: 'О нас', to: '/about' },
   { name: 'Контакты', to: '/contacts' },
-  { name: 'Блог', to: '/blog' },
-  { name: 'Каталог', to: '/catalog' },
+  { name: 'Каталог', to: '/store' },
 ];
 
 export const navLinksSecondary = [
-  { name: 'Оферта', to: '/offer' },
   { name: 'Доставка', to: '/delivery' },
   { name: 'FAQ', to: '/faq' },
 ];
@@ -32,10 +30,10 @@ export const homeSlides = [
   {
     id: '123',
     title: 'Уникальное ТЗ',
-    description: `Різні види карт з натурального дерева та додатківдля 
-    них щоб відповідати потребам наших клієнтів. 
-    Для того, щоб наш декор був найкращим, ми співпрацюємо 
-    з кращими виробниками сировини та фарб у галузі`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Duis eget dui at ante egestas porta. Sed sed arcu vitae risus ullamcorper 
+    sollicitudin. Nulla tristique, turpis non ornare porttitor, diam nisi malesuada magna, 
+    id laoreet odio orci ut nisi.`,
     image: '',
   },
   { id: '1234', title: 'Ешеду', description: 'вуак', image: '' },
@@ -43,11 +41,18 @@ export const homeSlides = [
   { id: '1236', title: 'Ешеду', description: 'вуак', image: '' },
 ];
 
-export const categories = [
+export const categoriesHome = [
   { to: 'store/single_layer', title: 'Однослойные карты', img: singleLayer },
   { to: 'store/multi_layer', title: 'Многослойные карты', img: multiLayer },
   { to: 'store/extra', title: 'Дополнительно', img: extra },
   { to: 'store/multi_layer', title: 'Разное', img: multiLayer },
+];
+
+export const payments = [
+  { image: mastercard },
+  { image: visa },
+  { image: googlePay },
+  { image: applePay },
 ];
 
 export const footerContacts = [
